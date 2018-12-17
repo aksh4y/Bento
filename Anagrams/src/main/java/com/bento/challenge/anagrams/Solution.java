@@ -41,6 +41,8 @@ public class Solution {
      * @return true, if is anagram
      */
     public static boolean isAnagram(String str1, String str2) {
+        if(str1.length() != str2.length())  // Skip the workload if lengths do not match
+            return false;
         /** Buld a hash map of letters in str1 with their occurrences **/
         Map<Character, Integer> map = buildLetterMap(str1);
         for(int i = 0; i < str2.length(); i++) {    // Traverse str2 and check against and manipulate the built map
